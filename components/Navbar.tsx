@@ -31,18 +31,20 @@ export default function Navbar() {
 
           {navGroups.map((group) => (
             <div key={group.label} className="group relative">
-              <button className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink">
-                {group.label}
-                <svg
-                  className="h-3.5 w-3.5 transition group-hover:rotate-180"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
+              <Link 
+                href={`${group.basePath}#${group.items[0].anchor}`}
+                className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink">
+                  {group.label}
+                  <svg
+                    className="h-3.5 w-3.5 transition group-hover:rotate-180"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+              </Link>
               <NavDropdownPanel group={group} />
             </div>
           ))}
@@ -89,30 +91,20 @@ export default function Navbar() {
             </Link>
 
             {navGroups.map((group) => (
-              <div key={group.label} className="border-t border-ink/5 py-2">
-                <button
-                  className="flex w-full items-center justify-between py-1 text-sm font-medium text-ink"
-                  onClick={() =>
-                    setMobileExpanded(mobileExpanded === group.label ? null : group.label)
-                  }
+              <div className="flex w-full items-center justify-between py-1">
+                <Link
+                  href={`${group.basePath}#${group.items[0].anchor}`}
+                  className="text-sm font-medium text-ink"
+                  onClick={() => setOpen(false)}
                 >
                   {group.label}
+                </Link>
+                <button
+                  aria-label={`Toggle ${group.label} submenu`}
+                  onClick={() => setMobileExpanded(mobileExpanded === group.label ? null : group.label)}
+                >
                   <span>{mobileExpanded === group.label ? "−" : "+"}</span>
                 </button>
-                {mobileExpanded === group.label && (
-                  <div className="mt-2 flex flex-col gap-2 pl-3">
-                    {group.items.map((item) => (
-                      <Link
-                        key={item.anchor}
-                        href={`${group.basePath}#${item.anchor}`}
-                        className="py-1 text-sm text-ink/60"
-                        onClick={() => setOpen(false)}
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
               </div>
             ))}
 
