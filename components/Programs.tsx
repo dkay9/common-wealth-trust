@@ -33,7 +33,7 @@ export default function Programs() {
             </h2>
           </div>
           <p className="max-w-sm text-sm text-ink/60">
-            Every program is designed to be handed over — owned and operated
+            Every program is designed to be handed over, owned and operated
             by the community within three years of launch.
           </p>
         </div>

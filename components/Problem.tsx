@@ -22,7 +22,7 @@ export default function Problem() {
       <div className="mx-auto max-w-8xl px-6 md:px-10">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl text-ink md:text-4xl">
-            The gap is basic infrastructure — not effort.
+            The gap is basic infrastructure not effort.
           </h2>
           <p className="mt-4 text-ink/70">
             Every community we work with already has the will to change its

@@ -47,7 +47,6 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-cream/10 pt-8 text-xs md:flex-row md:items-center">
           <p>© 2026 Commonwell Trust. A registered nonprofit organization.</p>
-          <p>Placeholder template — built for demonstration purposes.</p>
         </div>
       </div>
     </footer>
