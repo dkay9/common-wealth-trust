@@ -13,9 +13,6 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto flex min-h-[620px] max-w-8xl flex-col justify-center px-6 py-24 md:px-10">
-        <span className="mb-4 w-fit rounded-full bg-cream/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-cream/90 backdrop-blur">
-          Est. 2011 · Registered Nonprofit
-        </span>
         <h1 className="max-w-2xl font-display text-4xl leading-[1.1] text-cream text-balance md:text-6xl">
           Tackling the rural water, education, and healthcare access crisis.
         </h1>
