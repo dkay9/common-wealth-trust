@@ -29,7 +29,6 @@ export default function NavDropdownPanel({ group }: { group: NavGroup }) {
             <span className="mt-3 text-sm font-semibold leading-snug text-ink">
               {item.title}
             </span>
-            <span className="mt-1 text-xs text-ink/50">{item.subtitle}</span>
           </Link>
         ))}
       </div>
