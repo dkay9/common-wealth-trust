@@ -1,6 +1,4 @@
-# Commonwell Trust — Reusable Nonprofit Template
-
-A reusable charity / nonprofit website template built with Next.js 15 (App Router), TypeScript, and Tailwind CSS.
+# Commonwell Trust 
 
 ## Structure
 - Navbar (sticky, mobile menu)
@@ -14,13 +12,3 @@ A reusable charity / nonprofit website template built with Next.js 15 (App Route
 - Final CTA
 - Footer
 
-## Setup
-```
-npm install
-npm run dev
-```
-
-## Customizing for a client
-- Swap the org name/copy in each component (currently "Commonwell Trust" placeholder content)
-- Replace Unsplash image URLs with client photography
-- Colors and fonts are defined in `tailwind.config.ts` and `app/layout.tsx` (Fraunces + Work Sans)
