@@ -11,9 +11,9 @@ const config: Config = {
         cream: "#F5F1E8",
         ink: "#1C1C1A",
         terracotta: {
-          DEFAULT: "#C1502E",
-          dark: "#9C3D22",
-          light: "#DE8A6A",
+          DEFAULT: "#F74F22",
+          dark: "#F74F22",
+          light: "#F74F22",
         },
         forest: {
           DEFAULT: "#1F3A34",

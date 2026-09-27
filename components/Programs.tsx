@@ -19,21 +19,21 @@ const programs = [
   },
   {
     name: "Metal Fabrication",
-    desc: "Drilling and rehabilitating wells, and training local technicians to maintain them long after we leave.",
-    stat: "312 wells built",
-    img: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=800&auto=format&fit=crop",
+    desc: "Equips individuals with hands-on metalworking skills, fostering innovation, entrepreneurship, and self-sufficiency since April 2024.",
+    stat: "Since April 2024",
+    img: "images/hero/metal-fab.jpg",
   },
   {
-    name: "School Infrastructure",
-    desc: "Building classrooms, supplying learning materials, and funding teacher training in underserved districts.",
-    stat: "47 schools rebuilt",
-    img: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop",
+    name: "Fashion Design and Tailoring Department",
+    desc: "Equips individuals with skills in fashion design and pattern making since April 2024",
+    stat: "Since April 2024",
+    img: "images/hero/fashion-dept.jpg",
   },
   {
-    name: "Community Health",
-    desc: "Equipping rural clinics and training community health workers to deliver basic care closer to home.",
+    name: "Bakery and Confectionery Departmentt",
+    desc: "Equipping individuals with hands-on skills in baking, guided by expert instructors since May 2024",
     stat: "63 clinics equipped",
-    img: "https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=800&auto=format&fit=crop",
+    img: "images/hero/bakery-dept.jpg",
   },
 ];
 
