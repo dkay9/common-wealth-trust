@@ -1,7 +1,7 @@
 const stats = [
-  { value: "212", label: "Communities served" },
-  { value: "540K+", label: "Lives improved to date" },
-  { value: "9", label: "Countries of operation" },
+  { value: "1100", label: "From Survival to Self-Reliance"},
+  { value: "102", label: "Safe Learning, Nourished Children" },
+  { value: "∞", label: "Healing Beyond Skills" },
   { value: "91%", label: "Of donations go to programs" },
 ];
 

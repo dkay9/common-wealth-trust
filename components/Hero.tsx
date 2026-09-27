@@ -14,26 +14,23 @@ export default function Hero() {
 
       <div className="relative mx-auto flex min-h-[620px] max-w-8xl flex-col justify-center px-6 py-24 md:px-10">
         <h1 className="max-w-2xl font-display text-4xl leading-[1.1] text-cream text-balance md:text-6xl">
-          Tackling the rural water, education, and healthcare access crisis.
+          Welcome to Christ's Hands Skills Training and Child Development Centre.
         </h1>
         <p className="mt-6 max-w-lg text-lg text-cream/80">
-          Commonwell Trust exists to ensure rural schools, farmer
-          cooperatives, and health facilities can access the infrastructure
-          they need to thrive. Every project is co-funded and community-run,
-          so it keeps serving long after we leave.
+          Empowering Single Mothers and Out-of-School youths for a Brighter Future
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <Link
             href="/donate"
             className="rounded-full bg-terracotta px-7 py-3.5 font-semibold text-cream transition hover:bg-terracotta-dark"
           >
-            Give Today
+            Donate
           </Link>
           <Link
             href="/what-we-do"
             className="rounded-full border border-cream/30 px-7 py-3.5 font-semibold text-cream transition hover:border-cream/60"
           >
-            See Our Work
+            Volunteer With Us
           </Link>
         </div>
 
