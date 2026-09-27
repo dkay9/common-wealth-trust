@@ -30,11 +30,6 @@ export const aboutNav: NavGroup = {
       img: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=300&auto=format&fit=crop",
     },
     {
-      title: "Impact & Accountability",
-      anchor: "impact-accountability",
-      img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=300&auto=format&fit=crop",
-    },
-    {
       title: "Our Team",
       anchor: "team",
       img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=300&auto=format&fit=crop",

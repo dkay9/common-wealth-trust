@@ -62,18 +62,6 @@ export default function AboutPage() {
       />
 
       <ContentSection
-        id="impact-accountability"
-        eyebrow="Numbers, Reports, And Transparency"
-        title="Impact & Accountability"
-        paragraphs={[
-          "We publish an annual impact report with independently verified numbers on wells drilled, classrooms built, and clinics equipped.",
-          "91% of every donation goes directly to programs. The rest covers the oversight needed to keep it that way.",
-        ]}
-        image="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=900&auto=format&fit=crop"
-        reverse
-      />
-
-      <ContentSection
         id="team"
         eyebrow="Leadership Across Every Region"
         title="Our Team"
@@ -82,6 +70,7 @@ export default function AboutPage() {
           "Our head office handles funding, reporting, and partnerships so field teams can stay focused on delivery.",
         ]}
         image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900&auto=format&fit=crop"
+        reverse
       />
 
       <Footer />

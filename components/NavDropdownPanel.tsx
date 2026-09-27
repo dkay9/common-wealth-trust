@@ -10,12 +10,12 @@ export default function NavDropdownPanel({ group }: { group: NavGroup }) {
         isNarrow ? "w-[440px]" : "w-[880px]"
       }`}
     >
-      <div className="grid grid-cols-2 gap-5 rounded-2xl border border-ink/10 bg-cream p-6 shadow-2xl sm:grid-cols-5">
+      <div className="grid grid-cols-2 gap-4 bg-cream p-4 shadow-2xl sm:grid-cols-5">
         {group.items.map((item) => (
           <Link
             key={item.anchor}
             href={`${group.basePath}#${item.anchor}`}
-            className={`flex flex-col items-center rounded-xl p-3 text-center transition hover:bg-sand ${
+            className={`flex flex-col items-center border-2 border-ink p-4 text-center transition hover:bg-sand ${
               isNarrow ? "col-span-1" : ""
             }`}
           >
