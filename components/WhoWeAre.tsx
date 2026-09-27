@@ -26,10 +26,7 @@ export default function WhoWeAre() {
   const BACKGROUND_IMAGE =
     "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop";
 
-  const videoThumbnail =
-      VIDEO_ID === "YOUR_YOUTUBE_VIDEO_ID"
-      ? "https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=1200&auto=format&fit=crop"
-      : `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
+  const videoThumbnail = `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
 
   return (
     <>
