@@ -12,13 +12,12 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-cream/95 backdrop-blur">
       <nav className="mx-auto flex max-w-8xl items-center justify-between px-6 py-4 md:px-10">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-forest">
-            <span className="font-display text-lg italic text-cream">C</span>
-          </span>
-          <span className="font-display text-xl tracking-tight text-ink">
-            Commonwell Trust
-          </span>
+        <Link href="/" className="flex items-center">
+          <img
+            src="/images/logo.png"
+            alt="Christs Hands Skill"
+            className="h-14 w-auto object-contain"
+          />
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">

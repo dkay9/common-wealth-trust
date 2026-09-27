@@ -18,7 +18,7 @@ const programs = [
     img: "images/hero/hair-salon.jpg",
   },
   {
-    name: "Water Access",
+    name: "Metal Fabrication",
     desc: "Drilling and rehabilitating wells, and training local technicians to maintain them long after we leave.",
     stat: "312 wells built",
     img: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=800&auto=format&fit=crop",
