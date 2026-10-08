@@ -1,13 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import ImpactStats from "@/components/ImpactStats";
 import Problem from "@/components/Problem";
 import WhoWeAre from "@/components/WhoWeAre";
-import Programs from "@/components/Programs";
-import FundingCTA from "@/components/FundingCTA";
+import LearnAboutWork from "@/components/LearnAboutWork";
+import CostPerCentre from "@/components/CostPerCentre";
+import ImpactAccountability from "@/components/ImpactAccountability";
 import SuccessStories from "@/components/SuccessStories";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import ImpactStats from "@/components/ImpactStats";
 
 export default function Home() {
   return (
@@ -17,8 +18,9 @@ export default function Home() {
       <ImpactStats />
       <Problem />
       <WhoWeAre />
-      <Programs />
-      <FundingCTA />
+      <LearnAboutWork />
+      <CostPerCentre />
+      <ImpactAccountability />
       <SuccessStories />
       <FinalCTA />
       <Footer />

@@ -138,7 +138,6 @@ export default function Programs() {
               bg-gradient-to-r
               from-red-500
               via-yellow-500
-              via-green-500
               to-blue-500
             "
           />

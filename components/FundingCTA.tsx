@@ -1,3 +1,8 @@
+"use client"
+
+import { useState } from "react";
+import DonateButton from "./DonateButton";
+
 const tiers = [
   { amount: "$35", impact: "Provides clean water access for one family for a year" },
   { amount: "$120", impact: "Supplies a classroom with books and learning materials" },
@@ -6,6 +11,7 @@ const tiers = [
 ];
 
 export default function FundingCTA() {
+  const [open, setOpen] = useState(false)
   return (
     <section id="donate" className="bg-forest py-24 text-cream">
       <div className="mx-auto max-w-8xl px-6 md:px-10">
@@ -33,15 +39,14 @@ export default function FundingCTA() {
         </div>
 
         <div className="mt-12 flex flex-wrap items-center gap-4">
+          <DonateButton
+            size="sm"
+            className="mt-2 w-48 justify-center px-7 py-5"
+            onClick={() => setOpen(false)}
+          />
           <a
             href="#"
-            className="rounded-full bg-terracotta px-8 py-4 font-semibold text-cream transition hover:bg-terracotta-dark"
-          >
-            Make a Donation
-          </a>
-          <a
-            href="#"
-            className="rounded-full border border-cream/30 px-8 py-4 font-semibold text-cream transition hover:border-cream/60"
+            className="rounded border border-cream/30 px-8 py-4 font-semibold text-cream transition hover:border-cream/60"
           >
             Become a Monthly Partner
           </a>

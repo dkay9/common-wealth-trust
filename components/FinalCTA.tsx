@@ -1,27 +1,37 @@
+import Link from "next/link";
+import DonateButton from "./DonateButton";
+
 export default function FinalCTA() {
   return (
-    <section className="bg-cream py-24">
-      <div className="mx-auto max-w-4xl px-6 text-center md:px-10">
-        <h2 className="font-display text-3xl text-ink text-balance md:text-5xl">
-          Ready to put your generosity to work?
+    <section className="bg-terracotta py-20 text-cream">
+      <div className="mx-auto grid max-w-8xl grid-cols-1 items-center gap-10 px-6 md:grid-cols-2 md:px-10">
+        <h2 className="font-display text-3xl text-balance md:text-5xl">
+          More than 500 inspected & verified sites currently await
+          assistance.
         </h2>
-        <p className="mx-auto mt-5 max-w-lg text-ink/70">
-          Whether it's a one-time gift or a monthly partnership, every
-          contribution goes directly to a project you can track.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#donate"
-            className="rounded-full bg-terracotta px-8 py-4 font-semibold text-cream transition hover:bg-terracotta-dark"
-          >
-            Donate Now
-          </a>
-          <a
-            href="#"
-            className="rounded-full border border-ink/20 px-8 py-4 font-semibold text-ink transition hover:border-ink/40"
-          >
-            Partner With Us
-          </a>
+        <div>
+          <p className="text-cream/85">
+            Your donation to Commonwell Trust helps the next rural school,
+            farmer cooperative, or medical centre get connected.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <DonateButton variant="light" size="sm" />
+            <Link
+              href="/support#partner"
+              className="inline-flex items-center gap-3 border-2 border-cream px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-cream transition hover:bg-cream/10"
+            >
+              Partner With Us
+              <svg
+                className="h-3 w-3"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path d="M2 2h8v8" strokeLinecap="square" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

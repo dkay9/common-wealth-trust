@@ -2,8 +2,43 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { navGroups } from "@/lib/nav-data";
+import { aboutNav, whatWeDoNav, supportNav, type NavGroup } from "@/lib/nav-data";
 import NavDropdownPanel from "./NavDropdownPanel";
+import DonateButton from "./DonateButton";
+
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="flex items-center px-4 text-sm font-medium text-ink/70 transition hover:text-ink"
+    >
+      {children}
+    </Link>
+  );
+}
+
+function DropdownTrigger({ group }: { group: NavGroup }) {
+  return (
+    <div className="group flex items-center">
+      <Link
+        href={`${group.basePath}#${group.items[0].anchor}`}
+        className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink"
+      >
+        {group.label}
+        <svg
+          className="h-3.5 w-3.5 transition group-hover:rotate-180"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </Link>
+      <NavDropdownPanel group={group} />
+    </div>
+  );
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -11,8 +46,8 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-cream/95 backdrop-blur">
-      <nav className="mx-auto flex max-w-8xl items-center justify-between px-6 py-4 md:px-10">
-        <Link href="/" className="flex items-center">
+      <nav className="relative mx-auto flex max-w-8xl items-stretch justify-between px-6 md:px-10">
+        <Link href="/" className="flex items-center py-4">
           <img
             src="/images/logo.png"
             alt="Christs Hands Skill"
@@ -20,59 +55,26 @@ export default function Navbar() {
           />
         </Link>
 
-        <div className="hidden items-center gap-1 md:flex">
-          <Link
-            href="/"
-            className="rounded-full px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink"
-          >
-            Home
-          </Link>
+        <div className="hidden items-stretch gap-1 md:flex">
+          <NavLink href="/">Home</NavLink>
 
-          {navGroups.map((group) => (
-            <div key={group.label} className="group relative">
-              <Link 
-                href={`${group.basePath}#${group.items[0].anchor}`}
-                className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink">
-                  {group.label}
-                  <svg
-                    className="h-3.5 w-3.5 transition group-hover:rotate-180"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-              </Link>
-              <NavDropdownPanel group={group} />
-            </div>
-          ))}
+          <DropdownTrigger group={aboutNav} />
+          <DropdownTrigger group={whatWeDoNav} />
 
-          <Link
-            href="/contact"
-            className="rounded-full px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink"
-          >
-            Contact Us
-          </Link>
-          <a
-            href="#"
-            className="rounded-full px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink"
-          >
-            Blog
-          </a>
+          <NavLink href="/impact">Impact</NavLink>
+
+          <DropdownTrigger group={supportNav} />
+
+          <NavLink href="/contact">Contact Us</NavLink>
+          <NavLink href="#">Blog</NavLink>
         </div>
 
-        <div className="hidden md:block">
-          <Link
-            href="/donate"
-            className="rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-cream transition hover:bg-terracotta-dark"
-          >
-            Donate
-          </Link>
+        <div className="hidden items-center md:flex">
+          <DonateButton size="sm" />
         </div>
 
         <button
-          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 self-center md:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -89,8 +91,8 @@ export default function Navbar() {
               Home
             </Link>
 
-            {navGroups.map((group) => (
-              <div className="flex w-full items-center justify-between py-1">
+            {[aboutNav, whatWeDoNav].map((group) => (
+              <div key={group.label} className="flex w-full items-center justify-between border-t border-ink/5 py-2">
                 <Link
                   href={`${group.basePath}#${group.items[0].anchor}`}
                   className="text-sm font-medium text-ink"
@@ -108,22 +110,44 @@ export default function Navbar() {
             ))}
 
             <Link
+              href="/impact"
+              className="border-t border-ink/5 py-2 text-sm font-medium text-ink"
+              onClick={() => setOpen(false)}
+            >
+              Impact
+            </Link>
+
+            <div className="flex w-full items-center justify-between border-t border-ink/5 py-2">
+              <Link
+                href={`${supportNav.basePath}#${supportNav.items[0].anchor}`}
+                className="text-sm font-medium text-ink"
+                onClick={() => setOpen(false)}
+              >
+                {supportNav.label}
+              </Link>
+              <button
+                aria-label={`Toggle ${supportNav.label} submenu`}
+                onClick={() => setMobileExpanded(mobileExpanded === supportNav.label ? null : supportNav.label)}
+              >
+                <span>{mobileExpanded === supportNav.label ? "−" : "+"}</span>
+              </button>
+            </div>
+
+            <Link
               href="/contact"
               className="border-t border-ink/5 py-2 text-sm font-medium text-ink"
               onClick={() => setOpen(false)}
             >
               Contact Us
             </Link>
-            <a href="#" className="py-2 text-sm font-medium text-ink">
+            <Link href="#" className="py-2 text-sm font-medium text-ink">
               Blog
-            </a>
-            <Link
-              href="/donate"
-              className="mt-2 rounded-full bg-terracotta px-5 py-2.5 text-center text-sm font-semibold text-cream"
-              onClick={() => setOpen(false)}
-            >
-              Donate
             </Link>
+            <DonateButton
+              size="sm"
+              className="mt-2 w-full justify-center"
+              onClick={() => setOpen(false)}
+            />
           </div>
         </div>
       )}
