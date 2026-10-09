@@ -4,25 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { aboutNav, whatWeDoNav, supportNav, type NavGroup } from "@/lib/nav-data";
 import NavDropdownPanel from "./NavDropdownPanel";
-import DonateButton from "./DonateButton";
-
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      className="flex items-center px-4 text-sm font-medium text-ink/70 transition hover:text-ink"
-    >
-      {children}
-    </Link>
-  );
-}
 
 function DropdownTrigger({ group }: { group: NavGroup }) {
   return (
-    <div className="group flex items-center">
+    <div className="group">
       <Link
         href={`${group.basePath}#${group.items[0].anchor}`}
-        className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink"
+        className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink"
       >
         {group.label}
         <svg
@@ -39,15 +27,13 @@ function DropdownTrigger({ group }: { group: NavGroup }) {
     </div>
   );
 }
+import DonateButton from "./DonateButton";
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
-
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-cream/95 backdrop-blur">
-      <nav className="relative mx-auto flex max-w-8xl items-stretch justify-between px-6 md:px-10">
-        <Link href="/" className="flex items-center py-4">
+      <nav className="relative mx-auto flex max-w-8xl items-center justify-between px-6 py-4 md:px-10">
+        <Link href="/" className="flex items-center">
           <img
             src="/images/logo.png"
             alt="Christs Hands Skill"
@@ -55,22 +41,47 @@ export default function Navbar() {
           />
         </Link>
 
-        <div className="hidden items-stretch gap-1 md:flex">
-          <NavLink href="/">Home</NavLink>
+        <div className="hidden items-center gap-1 md:flex">
+          <Link
+            href="/"
+            className="rounded-full px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink"
+          >
+            Home
+          </Link>
 
           <DropdownTrigger group={aboutNav} />
           <DropdownTrigger group={whatWeDoNav} />
 
-          <NavLink href="/impact">Impact</NavLink>
+          <Link
+            href="/impact"
+            className="rounded-full px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink"
+          >
+            Impact
+          </Link>
 
           <DropdownTrigger group={supportNav} />
 
-          <NavLink href="/contact">Contact Us</NavLink>
-          <NavLink href="#">Blog</NavLink>
+          <Link
+            href="/contact"
+            className="rounded-full px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink"
+          >
+            Contact Us
+          </Link>
+          <a
+            href="#"
+            className="rounded-full px-4 py-2 text-sm font-medium text-ink/70 transition hover:text-ink"
+          >
+            Blog
+          </a>
         </div>
 
-        <div className="hidden items-center md:flex">
-          <DonateButton size="sm" />
+        <div className="hidden md:block">
+          <Link
+            href="/donate"
+            className="rounded bg-terracotta px-5 py-2.5 text-sm font-semibold text-cream transition hover:bg-terracotta-dark"
+          >
+            Donate
+          </Link>
         </div>
 
         <button

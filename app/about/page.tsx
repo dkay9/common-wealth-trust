@@ -158,30 +158,16 @@ export default function AboutPage() {
         image="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=900&auto=format&fit=crop"
       />
 
-      <TeamGrid
+      <ContentSection
         id="team"
         eyebrow="Leadership Across Every Region"
         title="Our Team"
-        members={[
-          {
-            photo: "/images/team/team-image1.jpg",
-            role: "Founder",
-            name: "Ntono Moreen",
-            bio: "Moreen was born in Buyala Budondo, Jinja District, Uganda, 1990. She graduated Trinity College Buwagi high school, 2009, and Busoga University (Iganga) Bachelor Arts (info management), 2012. Moreen resides in Kasangati, Wakiso District, Uganda.",
-          },
-          {
-            photo: "/images/team/team-image2.jpg",
-            role: "Vice, Chairperson",
-            name: "Tabula Robert",
-            bio: "Robert was born in Nawangisa, Iganga District, Uganda, 1989. He graduated Jinja Senior Secondary high school, 2006, Makerere University (Jinja) Bachelor of Science (Education), 2009, and Busoga University (Iganga) Bachelor of Science (Computer Technology), 2013. Robert resides in Kasangati, Wakiso District, Uganda.",
-          },
-          {
-            photo: "/images/team/team-image3.jpg",
-            role: "Executive",
-            name: "Robert Porter",
-            bio: "Robert was born in Weyburn, Saskatchewan, Canada, 1953. He graduated Weyburn Collegiate high school, 1971, Saint Olaf College Bachelor of Arts (Physics), 1974, and University of Texas (Austin) Masters of Science (Acoustics), 1981. Robert resides in Sidney, British Columbia, Canada.",
-          },
+        paragraphs={[
+          "Our field teams are hired and led locally in every country we operate in, because lasting infrastructure needs people who already understand the ground it's built on.",
+          "Our head office handles funding, reporting, and partnerships so field teams can stay focused on delivery.",
         ]}
+        image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900&auto=format&fit=crop"
+        reverse
       />
 
       <Footer />
